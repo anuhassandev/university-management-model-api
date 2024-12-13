@@ -1,0 +1,3973 @@
+{
+	"info": {
+		"_postman_id": "8dce5119-a489-48ce-b8e8-22b432b22d9c",
+		"name": "part1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27285932"
+	},
+	"item": [
+		{
+			"name": "GET /convenors (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /convenors (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 13:13:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Jose Rojas\",\n        \"position\": \"PROFESSOR\",\n        \"modules\": [\n            {\n                \"code\": \"CO2103\",\n                \"title\": \"Software Architecture\",\n                \"level\": 2,\n                \"optional\": false,\n                \"sessions\": [\n                    {\n                        \"id\": 1,\n                        \"topic\": \"REST APIs\",\n                        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                        \"duration\": 2\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Kehinde Aruleba\",\n        \"position\": \"LECTURER\",\n        \"modules\": [\n            {\n                \"code\": \"CO2103\",\n                \"title\": \"Software Architecture\",\n                \"level\": 2,\n                \"optional\": false,\n                \"sessions\": [\n                    {\n                        \"id\": 1,\n                        \"topic\": \"REST APIs\",\n                        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                        \"duration\": 2\n                    }\n                ]\n            },\n            {\n                \"code\": \"CO3095\",\n                \"title\": \"Software Quality\",\n                \"level\": 3,\n                \"optional\": true,\n                \"sessions\": [\n                    {\n                        \"id\": 2,\n                        \"topic\": \"Unit Testing\",\n                        \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n                        \"duration\": 2\n                    }\n                ]\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "POST /convenors (201)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 7,\n    \"name\": \"Anu Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/convenors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /convenors (201)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 444,\n    \"name\": \"Anu Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/convenors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 13:38:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 444,\n    \"name\": \"Anu Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "POST /convenors (409)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"name\": \"Anu Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/convenors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /convenors (409)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 4,\n    \"name\": \"Anu Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/convenors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 13:36:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 4 already exists"
+				}
+			]
+		},
+		{
+			"name": "GET /convenors/:convenorID (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /convenors/:convenorID (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 13:40:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"Kehinde Aruleba\",\n    \"position\": \"LECTURER\",\n    \"modules\": [\n        {\n            \"code\": \"CO2103\",\n            \"title\": \"Software Architecture\",\n            \"level\": 2,\n            \"optional\": false,\n            \"sessions\": [\n                {\n                    \"id\": 1,\n                    \"topic\": \"REST APIs\",\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                    \"duration\": 2\n                }\n            ]\n        },\n        {\n            \"code\": \"CO3095\",\n            \"title\": \"Software Quality\",\n            \"level\": 3,\n            \"optional\": true,\n            \"sessions\": [\n                {\n                    \"id\": 2,\n                    \"topic\": \"Unit Testing\",\n                    \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n                    \"duration\": 2\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /convenors/:convenorID (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "19"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /convenors/:convenorID (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "19"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 13:42:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 19 not found"
+				}
+			]
+		},
+		{
+			"name": "PUT /convenors/:convenorID (200)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"name\": \"Anuoluwapo Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /convenors/:convenorID (200)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 5,\n    \"name\": \"Anuoluwapo Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:15:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"name\": \"Anuoluwapo Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT /convenors/:convenorID (404)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 444,\n    \"name\": \"Anuoluwapo Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "444"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /convenors/:convenorID (404)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 444,\n    \"name\": \"Anuoluwapo Hassan\",\n    \"position\": \"GTA\",\n    \"modules\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "444"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:38:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 444 not found"
+				}
+			]
+		},
+		{
+			"name": "GET convenors/:convenorID/modules (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID",
+						"modules"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET convenors/:convenorID/modules (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID",
+								"modules"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:40:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"code\": \"CO2103\",\n        \"title\": \"Software Architecture\",\n        \"level\": 2,\n        \"optional\": false,\n        \"sessions\": [\n            {\n                \"id\": 1,\n                \"topic\": \"REST APIs\",\n                \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                \"duration\": 2\n            }\n        ]\n    },\n    {\n        \"code\": \"CO3095\",\n        \"title\": \"Software Quality\",\n        \"level\": 3,\n        \"optional\": true,\n        \"sessions\": [\n            {\n                \"id\": 2,\n                \"topic\": \"Unit Testing\",\n                \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n                \"duration\": 2\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET convenors/:convenorID/modules (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID",
+						"modules"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "444"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET convenors/:convenorID/modules (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID",
+								"modules"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "444"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:41:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 444 not found"
+				}
+			]
+		},
+		{
+			"name": "DELETE /convenors/:convenorID (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /convenors/:convenorID (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:33:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 5 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "DELETE /convenors/:convenorID (404)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "444"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /convenors/:convenorID (404)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "444"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:35:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 444 not found"
+				}
+			]
+		},
+		{
+			"name": "GET /modules (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /modules (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:43:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"code\": \"CO2103\",\n        \"title\": \"Software Architecture\",\n        \"level\": 2,\n        \"optional\": false,\n        \"sessions\": [\n            {\n                \"id\": 1,\n                \"topic\": \"REST APIs\",\n                \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                \"duration\": 2\n            }\n        ]\n    },\n    {\n        \"code\": \"CO3095\",\n        \"title\": \"Software Quality\",\n        \"level\": 3,\n        \"optional\": true,\n        \"sessions\": [\n            {\n                \"id\": 2,\n                \"topic\": \"Unit Testing\",\n                \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n                \"duration\": 2\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "POST /modules (201)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"ADX2000\",\n    \"title\": \"Livin' La Vida Loca\",\n    \"level\":444,\n    \"optional\": true,\n    \"sessions\": []\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /modules (201)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"ADX2000\",\n    \"title\": \"Livin' La Vida Loca\",\n    \"level\":444,\n    \"optional\": true,\n    \"sessions\": []\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:59:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code ADX2000 already exists"
+				}
+			]
+		},
+		{
+			"name": "POST /modules (409)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"CO2103\",\n    \"title\": \"Software Architecture\",\n    \"level\":2,\n    \"optional\": false,\n    \"sessions\": []\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /modules (409)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"CO2103\",\n    \"title\": \"Software Architecture\",\n    \"level\":2,\n    \"optional\": false,\n    \"sessions\": []\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:01:52 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code CO2103 already exists"
+				}
+			]
+		},
+		{
+			"name": "GET /modules/:moduleCode (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO2103"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /modules/:moduleCode (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO2103"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:04:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"CO2103\",\n    \"title\": \"Software Architecture\",\n    \"level\": 2,\n    \"optional\": false,\n    \"sessions\": [\n        {\n            \"id\": 1,\n            \"topic\": \"REST APIs\",\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n            \"duration\": 2\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /modules/:moduleCode (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "ADX1000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /modules/:moduleCode (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "ADX1000"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:05:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code ADX1000 not found"
+				}
+			]
+		},
+		{
+			"name": "PATCH /modules/:moduleCode (200)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\":\"CO2103\",\n    \"level\": 4\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO2103"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PATCH /modules/:moduleCode (200)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"CO2103\",\n    \"level\": 4\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO2103"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 22:47:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"CO2103\",\n    \"title\": \"Software Architecture\",\n    \"level\": 4,\n    \"optional\": false,\n    \"sessions\": [\n        {\n            \"id\": 1,\n            \"topic\": \"REST APIs\",\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n            \"duration\": 2\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "PATCH /modules/:moduleCode (404)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\":\"ADX9000\",\n    \"level\": 4\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "ADX9000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PATCH /modules/:moduleCode (404)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"ADX9000\",\n    \"level\": 4\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "ADX9000"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 22:47:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code ADX9000 not found"
+				}
+			]
+		},
+		{
+			"name": "GET /modules/:moduleCode/sessions (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO2103"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /modules/:moduleCode/sessions (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO2103"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:30:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"topic\": \"REST APIs\",\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n        \"duration\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /modules/:moduleCode/sessions (204)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "EMPTY_0"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /modules/:moduleCode/sessions (204)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "EMPTY_0"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:41:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "POST /modules/:moduleCode/sessions (201)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 444,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /modules/:moduleCode/sessions (201)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 444,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								}
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:52:52 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"CO3095\",\n    \"title\": \"Software Quality\",\n    \"level\": 3,\n    \"optional\": true,\n    \"sessions\": [\n        {\n            \"id\": 2,\n            \"topic\": \"Unit Testing\",\n            \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n            \"duration\": 2\n        },\n        {\n            \"id\": 7,\n            \"topic\": \"Livin' La Vida Loca\",\n            \"datetime\": \"2023-05-07T15:41:45.205+00:00\",\n            \"duration\": 59\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "POST /modules/:moduleCode/sessions (409)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /modules/:moduleCode/sessions (409)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								}
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:57:51 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Session with ID 2 already exists"
+				}
+			]
+		},
+		{
+			"name": "GET /modules/:moduleCode/sessions/:sessionID (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions",
+						":sessionID"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						},
+						{
+							"key": "sessionID",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /modules/:moduleCode/sessions/:sessionID (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions",
+								":sessionID"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								},
+								{
+									"key": "sessionID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:59:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"topic\": \"Unit Testing\",\n    \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n    \"duration\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /modules/:moduleCode/sessions/:sessionID (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions",
+						":sessionID"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						},
+						{
+							"key": "sessionID",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /modules/:moduleCode/sessions/:sessionID (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions",
+								":sessionID"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								},
+								{
+									"key": "sessionID",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:01:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Session with ID 4 not found"
+				}
+			]
+		},
+		{
+			"name": "PUT /modules/:moduleCode/sessions/:sessionID (200)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions",
+						":sessionID"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						},
+						{
+							"key": "sessionID",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /modules/:moduleCode/sessions/:sessionID (200)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions",
+								":sessionID"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								},
+								{
+									"key": "sessionID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:05:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205+00:00\",\n    \"duration\": 59\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT /modules/:moduleCode/sessions/:sessionID (404)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions",
+						":sessionID"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						},
+						{
+							"key": "sessionID",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /modules/:moduleCode/sessions/:sessionID (404)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 4,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions",
+								":sessionID"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								},
+								{
+									"key": "sessionID",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:06:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Session with ID 4 not found"
+				}
+			]
+		},
+		{
+			"name": "PUT /modules/:moduleCode/sessions/:sessionID (200)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"topic\": \"Postman API Testing\",\n    \"datetime\": \"2023-02-22T16:00:00.000Z\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions",
+						":sessionID"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						},
+						{
+							"key": "sessionID",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /modules/:moduleCode/sessions/:sessionID (200)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"topic\": \"Postman API Testing\",\n    \"datetime\": \"2023-02-22T16:00:00.000Z\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions",
+								":sessionID"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								},
+								{
+									"key": "sessionID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 08 May 2023 00:53:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"topic\": \"Postman API Testing\",\n    \"datetime\": \"2023-02-22T16:00:00.000+00:00\",\n    \"duration\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT /modules/:moduleCode/sessions/:sessionID (404)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 4,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions",
+						":sessionID"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						},
+						{
+							"key": "sessionID",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /modules/:moduleCode/sessions/:sessionID (404)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 4,\n    \"topic\": \"Livin' La Vida Loca\",\n    \"datetime\": \"2023-05-07T15:41:45.205Z\",\n    \"duration\": 59\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions",
+								":sessionID"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								},
+								{
+									"key": "sessionID",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 22:55:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Session with ID 4 not found"
+				}
+			]
+		},
+		{
+			"name": "DELETE /modules/:moduleCode/sessions/:sessionID (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions",
+						":sessionID"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						},
+						{
+							"key": "sessionID",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /modules/:moduleCode/sessions/:sessionID (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions",
+								":sessionID"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								},
+								{
+									"key": "sessionID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:09:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Session with ID 2 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "DELETE /modules/:moduleCode/sessions/:sessionID (404)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode",
+						"sessions",
+						":sessionID"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						},
+						{
+							"key": "sessionID",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /modules/:moduleCode/sessions/:sessionID (404)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode/sessions/:sessionID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode",
+								"sessions",
+								":sessionID"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								},
+								{
+									"key": "sessionID",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:10:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Session with ID 4 not found"
+				}
+			]
+		},
+		{
+			"name": "DELETE /modules/:moduleCode (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO3095"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /modules/:moduleCode (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 21:16:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code CO3095 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "DELETE /modules/:moduleCode (404)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "ADX40000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /modules/:moduleCode (404)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "ADX40000"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 15:28:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code ADX40000 not found"
+				}
+			]
+		},
+		{
+			"name": "GET /sessions?convenorID&moduleCode (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sessions?convenorID=4&moduleCode=CO2103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenorID",
+							"value": "4"
+						},
+						{
+							"key": "moduleCode",
+							"value": "CO2103"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /sessions?convenorID&moduleCode (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sessions?convenorID=4&moduleCode=CO2103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenorID",
+									"value": "4"
+								},
+								{
+									"key": "moduleCode",
+									"value": "CO2103"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:31:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"topic\": \"REST APIs\",\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n        \"duration\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /sessions?convenorID (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sessions?convenorID=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenorID",
+							"value": "4"
+						},
+						{
+							"key": "moduleCode",
+							"value": "CO2103",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /sessions?convenorID (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sessions?convenorID=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenorID",
+									"value": "4"
+								},
+								{
+									"key": "moduleCode",
+									"value": "CO2103",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:33:53 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"topic\": \"REST APIs\",\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n        \"duration\": 2\n    },\n    {\n        \"id\": 2,\n        \"topic\": \"Unit Testing\",\n        \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n        \"duration\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /sessions?moduleCode (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sessions?moduleCode=CO2103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenorID",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "moduleCode",
+							"value": "CO2103"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /sessions?convenorID (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sessions?moduleCode=CO2103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenorID",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "moduleCode",
+									"value": "CO2103"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:35:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"topic\": \"REST APIs\",\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n        \"duration\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /sessions (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenorID",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "moduleCode",
+							"value": "CO2103",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /sessions (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenorID",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "moduleCode",
+									"value": "CO2103",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:39:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"topic\": \"REST APIs\",\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n        \"duration\": 2\n    },\n    {\n        \"id\": 2,\n        \"topic\": \"Unit Testing\",\n        \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n        \"duration\": 2\n    },\n    {\n        \"id\": 6,\n        \"topic\": \"TESTING TESTING 123\",\n        \"datetime\": \"2023-06-21T08:00:00.000+00:00\",\n        \"duration\": 40\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "DELETE /sessions (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /sessions (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:16:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "All sessions deleted"
+				}
+			]
+		},
+		{
+			"name": "DELETE /sessions (204)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /sessions (204)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:16:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "GET /sessions?moduleCode (204)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sessions?moduleCode=EMPTY_0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenorID",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "moduleCode",
+							"value": "EMPTY_0"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /sessions?moduleCode (204)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/sessions?moduleCode=EMPTY_0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenorID",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "moduleCode",
+									"value": "EMPTY_0"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 16:46:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "DELETE /modules/:moduleCode (200) DEL CO2103",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "CO2103"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /modules/:moduleCode (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 21:16:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code CO3095 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "DELETE /modules/:moduleCode (200) DEL EMPTY_0",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "EMPTY_0"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /modules/:moduleCode (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 21:16:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code CO3095 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "DELETE /modules/:moduleCode (200) DEL ADX2000",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules/:moduleCode",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules",
+						":moduleCode"
+					],
+					"variable": [
+						{
+							"key": "moduleCode",
+							"value": "ADX2000"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /modules/:moduleCode (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules/:moduleCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules",
+								":moduleCode"
+							],
+							"variable": [
+								{
+									"key": "moduleCode",
+									"value": "CO3095"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 May 2023 21:16:19 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module with code CO3095 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "GET /modules (204)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /modules (204)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"modules"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:46:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "DELETE /convenors/:convenorID (200) DEL 3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /convenors/:convenorID (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:33:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 5 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "DELETE /convenors/:convenorID (200) DEL 4",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /convenors/:convenorID (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:33:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 5 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "DELETE /convenors/:convenorID (200) DEL 7",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors/:convenorID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors",
+						":convenorID"
+					],
+					"variable": [
+						{
+							"key": "convenorID",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /convenors/:convenorID (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors/:convenorID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors",
+								":convenorID"
+							],
+							"variable": [
+								{
+									"key": "convenorID",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 14:33:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor with ID 5 has been deleted."
+				}
+			]
+		},
+		{
+			"name": "GET /convenors (204)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/convenors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"convenors"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /convenors (204)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/convenors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"convenors"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 07 May 2023 13:13:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

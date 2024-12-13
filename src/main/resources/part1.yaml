@@ -1,0 +1,599 @@
+#ADD EXAMPLES NEXT
+
+openapi: "3.0.1"
+info:
+  title: School Management API
+  description: API for managing school modules, convenors, and sessions.
+  version: 1.0.0
+
+tags:
+  - name: Convenor
+    description: Person who assumes responsibility for a module
+  - name: Module
+    description: Unit of structured learning
+  - name: Session
+    description: Details of a specific topic covered in a module
+
+paths:
+  /convenors:
+    get:
+      summary: List all convenors
+      tags:
+        - Convenor
+      responses:
+        '200':
+          description: Successful operation
+        '204':
+          description: No convenors exist
+    post:
+      summary: Add a new convenor
+      requestBody:
+        description: JSON representation of the convenor
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Convenor'
+      responses:
+        '201':
+          description: Convenor added successfully
+        '409':
+          description: Convenor with this ID already exists
+
+  /convenors/{convenorID}:
+    get: #3
+      summary: Retrieve a specific convenor
+      parameters:
+        - name: convenorID
+          in: path
+          description: ID of convenor to retrieve
+          required: true
+          schema:
+            type: integer
+            format: int64
+      tags:
+        - Convenor
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Convenor'
+        '404':
+          description: Convenor ID not found
+
+    put: #4
+      summary: Update a specific convenor
+      parameters:
+        - name: convenorID
+          in: path
+          description: ID of convenor to update
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/ConvenorBody'
+
+      
+      tags:
+        - Convenor
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Convenor'
+        '404':
+          description: Convenor ID not found
+
+    delete: #5
+      summary: Deletes a specific convenor
+      parameters:
+        - name: convenorID
+          in: path
+          description: ID of convenor to delete
+          required: true
+          schema:
+            type: integer
+            format: int64
+      
+      tags:
+        - Convenor
+      responses:
+        '200':
+          description: Successful Operation
+        '404':
+          description: Convenor ID not found
+
+  /convenors/{convenorID}/modules:
+    get: #6
+      summary: Get all the modules of a specific convenor
+      parameters:
+        - name: convenorID
+          in: path
+          description: ID of convenor to retrieve modules for
+          required: true
+          schema:
+            type: integer
+            format: int64
+      tags:
+        - Convenor
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Module'
+        '404':
+          description: Convenor ID not found
+
+  /modules:
+    get: #7
+      summary: List All Modules
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Module'
+        '204':
+          description: No moudles exist to display
+    
+    post: #8
+      summary: Create a Module
+      requestBody:
+        $ref: '#/components/requestBodies/ModuleBody'
+
+      tags:
+        - Module
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+        '409':
+          description: Moudle with this code already
+
+  /modules/{moduleCode}:
+    get: #9
+      summary: Retrieve a specific Module
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Module Code of module to retrieve
+          required: true
+          schema:
+            type: string
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+        '404':
+          description: Module Code not found
+
+    patch: #10
+      summary: Update a specific Module
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Module Code of module to update
+          required: true
+          schema:
+            type: string
+      requestBody:
+        $ref: '#/components/requestBodies/ModuleBody'
+
+      
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+        '404':
+          description: Module Code not found
+
+    delete: #11
+      summary: Deletes a specific module
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Module Code of module to delete
+          required: true
+          schema:
+            type: string
+      
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Successful Operation
+        '404':
+          description: Module Code not found
+
+  /modules/{moduleCode}/sessions:
+    get: #12
+      summary: List all sessions of a module
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Code of module that has sessions to view
+          required: true
+          schema:
+            type: string
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Operation Successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Session'
+        '204':
+          description: Module has no sessions to view
+
+    post: #13
+      summary: Create a session in a module
+      requestBody:
+        $ref: '#/components/requestBodies/SessionBody'
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Code of module that you are creating a session for
+          required: true
+          schema:
+            type: string
+      tags:
+        - Module
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+        '409':
+          description: Session with this ID already exists
+
+  /modules/{moduleCode}/sessions/{sessionID}:
+    get: #14
+      summary: Retrieve a session in a module
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Code of module that you are retrieving a session from
+          required: true
+          schema:
+            type: string
+        - name: sessionID
+          in: path
+          description: ID of session to retrieve in a module
+          required: true
+          schema:
+            type: integer
+            format: int64
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '404':
+          description: Session not found
+
+    put: #15
+      summary: Update a session in a module
+      requestBody:
+        $ref: '#/components/requestBodies/SessionBody'
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Code of module that has the session you want to update
+          required: true
+          schema:
+            type: string
+        - name: sessionID
+          in: path
+          description: ID of session to update in a module
+          required: true
+          schema:
+            type: integer
+            format: int64
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '404':
+          description: Session not found
+
+    patch: #16
+      summary: Update a session in a module
+      requestBody:
+        $ref: '#/components/requestBodies/SessionBody'
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Code of module that contains the session you want to update
+          required: true
+          schema:
+            type: string
+        - name: sessionID
+          in: path
+          description: ID of session to update in a module
+          required: true
+          schema:
+            type: integer
+            format: int64
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '404':
+          description: Session not found
+
+    delete: #17
+      summary: Deletes a specific session from a module
+      parameters:
+        - name: moduleCode
+          in: path
+          description: Code of module that has the session you want to delete
+          required: true
+          schema:
+            type: string
+        - name: sessionID
+          in: path
+          description: ID of session you want to delete in a module
+          required: true
+          schema:
+            type: integer
+            format: int64
+      tags:
+        - Module
+      responses:
+        '200':
+          description: Successful Operation
+        '404':
+          description: Session ID not found
+
+  /sessions:
+    delete: #18
+      summary: delete all sessions
+      tags:
+        - Session
+      responses:
+        '200':
+          description: Successful Operation
+        '204':
+          description: No sessions exist to delete
+
+    get: #19-20
+      summary: List all sessions, filtering by convenor ID, Module Code or both or neither
+      parameters:
+        - name: convenorID #19.1
+          in: query
+          description: convenorID to filter by
+          required: false #20
+          schema:
+            type: integer
+            format: int64
+        - name: moduleCode #19.2
+          in: query
+          description: Module Code to filter by
+          required: false #20
+          schema:
+            type: string
+      tags:
+        - Session
+      responses:
+        '200':
+          description: Successful Operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                $ref: '#/components/schemas/Session'
+        '204':
+          description: No sessions to display
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#components
+components:
+  #schemas
+  schemas:
+    Convenor:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        position:
+          type: string
+          enum:
+            - GTA
+            - Lecturer
+            - Professor
+        modules:
+          type: array
+          items:
+            $ref: '#/components/schemas/Module'
+      required:
+        - id
+        - name
+        - position
+        - modules
+
+
+    Session:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        topic:
+          type: string
+        datetime:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+      required:
+        - id
+        - topic
+        - datetime
+        - duration
+
+    Module:
+      type: object
+      properties:
+        code:
+          type: string
+        title:
+          type: string
+        level:
+          type: integer
+        optional:
+          type: boolean
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Session'
+      required:
+        - code
+        - title
+        - level
+        - optional
+        - sessions
+
+
+  #requestBodies
+  requestBodies:
+    ConvenorBody:
+      description: JSON Object containing a Convenor's Information
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Convenor'
+
+    ModuleBody:
+      description: JSON Object containing a Module's Information
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Module'
+
+    SessionBody:
+      description: JSON Object containing a Session's Information
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Session'
+
+
+
+        #each endpoint should have a success (2xx) and an error (4xx)
+        #RESTAPI for CMS Module Timetable management
+
+        ############ endpoints ##############
+        #ConvenorRestController (/convenors)
+        #1. GET List All convenors DONE
+        #2. POST Create a convenor DONE
+        #3. GET Retrieve a specific convenor DONE
+        #4. PUT Update a specific convenor DONE
+        #5. DELETE Delete a specific convenor DONE
+        #6. GET (/{id}/modules) List all modules taught by a convenor DONE
+
+        #ModuleRestController (/module)
+        #7. GET List All Modules DONE
+        #8. POST Create a Module DONE
+        #9. GET Retrieve a specific module DONE
+        #10. PATCH Update a specific module DONE
+        #11. DELETE Delete a specific module DONE
+
+        #(/modules/{code}/sessions)
+        #12. GET (/{code}/sessions) List all sessions in a module DONE
+        #13. POST Create a session in a module DONE
+        #14. GET Retrieve a session in a module DONE
+        #15. PUT Update a session in a module DONE
+        #16. PATCH Update a session in a module DONE
+        #17. DELETE Delete a session in a module DONE
+
+        #SessionRestController (/sessions)
+        #18. DELETE Delete all sessions DONE
+        #19.1. GET List all sessions, allowing filtering by convenor ID
+        #/sessions?convenor=1  DONE
+        #19.2. GET List all sessions, allowing filtering by Moudle Code
+        #/sessions?module=co2103 OR BOTH (#20) DONE
+
